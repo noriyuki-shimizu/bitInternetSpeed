@@ -1,0 +1,41 @@
+{
+  "name": "bitinternetspeed",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "apply:bitbar": "rm ~/アプリケーション/BitBar/bitInternetSpeed.10m.js || chmod +x ./dist/index.js && ln -s ~/src/myApp/bitInternetSpeed/dist/index.js ~/アプリケーション/BitBar/bitInternetSpeed.10m.js",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "build:start": "npm run build && npm start",
+    "lint": "npm run lint:e && npm run lint:p",
+    "lint:e": "eslint . --ext .js,.cjs,.mjs,.ts,.cts,.mts --ignore-path .gitignore",
+    "lint:p": "prettier -c -u --cache .",
+    "format": "npm run format:e && npm run format:p",
+    "format:e": "npm run lint:e -- --fix",
+    "format:p": "prettier -w -u --cache ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "engines": {
+    "node": ">=18.17.0",
+    "yarn": "use npm please!",
+    "pnpm": "use npm please!"
+  },
+  "volta": {
+    "node": "18.17.0",
+    "npm": "9.8.1"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.2.1",
+    "@typescript-eslint/parser": "^6.2.1",
+    "eslint": "^8.46.0",
+    "prettier": "^3.0.1",
+    "ts-node": "^10.9.1"
+  },
+  "dependencies": {
+    "@types/speedtest-net": "^2.1.1",
+    "speedtest-net": "^2.2.0"
+  }
+}
